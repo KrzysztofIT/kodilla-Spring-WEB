@@ -23,7 +23,7 @@ public class TaskController {
         //return new TaskDto(taskId,"test title","test content");
     }
 
-    @RequestMapping(method = {RequestMethod.PUT , RequestMethod.DELETE} , value = "getTask")
+    @RequestMapping(method = {RequestMethod.PUT , RequestMethod.DELETE} , value = "deleteTask")
     public void deleteTask(Long taskId){
 
     }
@@ -34,7 +34,7 @@ public class TaskController {
         //return new TaskDto(task.getId(),task.getTitle(),task.getContent());
     }
 
-    @RequestMapping(method = RequestMethod.PUT , value = "updateTask")
+    @RequestMapping(method = RequestMethod.PUT , value = "createTask")
     public void createTask(TaskDto task){
        // return new TaskDto(1L,"Create test title","Create test content")
     }
