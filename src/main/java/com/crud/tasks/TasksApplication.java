@@ -12,7 +12,7 @@ public class TasksApplication {
 		/*TaskDto taskDto = new TaskDto(
 				(long) 1,
 				"Test title",
-				"Spitng hard work"
+				"Spring hard work"
 		);
 		Long id = taskDto.getId();
 		String title = taskDto.getTitle();

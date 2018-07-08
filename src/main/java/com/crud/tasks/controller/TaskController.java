@@ -1,0 +1,41 @@
+package com.crud.tasks.controller;
+
+import com.crud.tasks.domain.TaskDto;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+@RequestMapping("/v1/task")
+public class TaskController {
+
+    @RequestMapping(method = RequestMethod.GET , value = "getTasks")
+    public List<TaskDto> getTasks(){
+        return new ArrayList<>();
+    }
+
+    @RequestMapping(method = {RequestMethod.PUT , RequestMethod.GET}, value = "getTask")
+    public TaskDto getTask(Long taskId){
+        return new TaskDto(1L,"test title","test content");
+        //return new TaskDto(taskId,"test title","test content");
+    }
+
+    @RequestMapping(method = {RequestMethod.PUT , RequestMethod.DELETE} , value = "getTask")
+    public void deleteTask(Long taskId){
+
+    }
+
+    @RequestMapping(method = {RequestMethod.PUT , RequestMethod.GET} , value = "updateTask")
+    public TaskDto updateTask(TaskDto task){
+        return new TaskDto(1L,"Edited test title","Edited test content");
+        //return new TaskDto(task.getId(),task.getTitle(),task.getContent());
+    }
+
+    @RequestMapping(method = RequestMethod.PUT , value = "updateTask")
+    public void createTask(TaskDto task){
+       // return new TaskDto(1L,"Create test title","Create test content")
+    }
+}
