@@ -34,7 +34,9 @@ public class TrelloClient {
     private URI getUriToTrello(){
         return  UriComponentsBuilder.fromHttpUrl(trelloApiEndpoint + "/members/" + trelloUsername + "/boards")
                 .queryParam("key", trelloAppKey)
-                .queryParam("token", trelloToken).build().encode().toUri();
+                .queryParam("token", trelloToken)
+                .queryParam("lists", "all")
+                .build().encode().toUri();
 
 
     }
@@ -58,8 +60,10 @@ public class TrelloClient {
         }
         return new ArrayList<>();
         */
-        return Optional.ofNullable(Arrays.asList(boardsResponse)).orElse(new ArrayList<>());
+        //return Optional.ofNullable(Arrays.asList(boardsResponse)).orElse(new ArrayList<>());
 
+        TrelloBoardDto[] tmp = Optional.ofNullable(boardsResponse).orElse(new TrelloBoardDto[0]);
+        return Arrays.asList(tmp);
     }
 
 
