@@ -7,6 +7,7 @@ import com.crud.tasks.trello.config.TrelloConfig;
 import java.net.URI;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -32,14 +33,19 @@ public class TrelloClientTest {
     @Mock
     private TrelloConfig trelloConfig;
 
-    @Test
-    public void shouldFetchTrelloBoards() throws URISyntaxException {
-        //Given
+
+
+    @Before
+    public void init(){
         Mockito.when(trelloConfig.getTrelloApiEndpoint()).thenReturn("http://test.com");
         Mockito.when(trelloConfig.getTrelloAppKey()).thenReturn("test");
         Mockito.when(trelloConfig.getTrelloToken()).thenReturn("test");
+    }
 
 
+    @Test
+    public void shouldFetchTrelloBoards() throws URISyntaxException {
+        //Given
         TrelloBoardDto[] trelloBoards = new TrelloBoardDto[1];
         trelloBoards[0] = new TrelloBoardDto("test_id", "test_board", new ArrayList<>());
 

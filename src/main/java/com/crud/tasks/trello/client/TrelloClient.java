@@ -44,7 +44,7 @@ public class TrelloClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final  Logger  LOGGER= LoggerFactory.getLogger(TrelloClient.class);
+    private static final  Logger LOGGER = LoggerFactory.getLogger(TrelloClient.class);
 
 
     private URI getUriToTrello(){
@@ -52,7 +52,9 @@ public class TrelloClient {
                 .queryParam("key", trelloConfig.getTrelloAppKey())
                 .queryParam("token", trelloConfig.getTrelloToken())
                 .queryParam("lists", "all")
-                .build().encode().toUri();
+                .build()
+                .encode()
+                .toUri();
 
 
     }
