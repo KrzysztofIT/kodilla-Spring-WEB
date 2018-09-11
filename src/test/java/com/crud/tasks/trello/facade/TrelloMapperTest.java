@@ -12,8 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
-
-public class TrelloFacadeTest {
+public class TrelloMapperTest {
 
     @InjectMocks
     private TrelloMapper trelloMapper;
