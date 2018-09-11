@@ -1,7 +1,6 @@
 package com.crud.tasks.mapper;
 
 import com.crud.tasks.domain.*;
-import lombok.Getter;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
