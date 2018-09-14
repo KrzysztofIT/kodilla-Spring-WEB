@@ -19,7 +19,7 @@ public class TaskMapperTest {
     private TaskMapper taskMapper;
 
     @Test
-    public void checkTestMapperDto ()  {
+    public void checkTestMapper ()  {
         //Given
 
         TaskDto taskDto = new TaskDto(1L,"test TaskDto title","test TaskDto content");
